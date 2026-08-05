@@ -3,6 +3,11 @@ AI-Driven Chatbot Framework for Smart Tourism
 Basic entry point - Academic Prototype
 """
 
+import sys
+import os
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from chatbot.intent import detect_intent
 from chatbot.response import generate_response
 

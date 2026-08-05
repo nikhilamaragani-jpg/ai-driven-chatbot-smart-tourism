@@ -1,32 +1,23 @@
-# Project walkthrough — Smart Tourism Chatbot
+# Interview walkthrough — Smart Tourism Chatbot
 
-## 60-second summary
+## 60-second pitch
 
-Tourism needs fast, structured assistance. Many bots are rule-only and lose context. My major project proposes a layered chatbot framework and ships a modular Python prototype with intent routing, a tourism knowledge base, response generation, and SQLite conversation history.
+I built a tourism Applied AI service with a retrieval layer over a curated knowledge base, intent fallbacks, SQLite conversation logging, and a FastAPI interface. Locally it runs without paid APIs using TF-IDF retrieval so demos are reliable. The architecture is designed so retrieval and generation can be upgraded independently.
 
-## Architecture
+## Design questions
 
-1. User message  
-2. Knowledge FAQ match (fast path) or intent detection  
-3. Response generation  
-4. Save turn to SQLite  
+**Why not only an LLM?**  
+Grounding + cost control. Retrieval first reduces hallucination for FAQ-style tourism help.
+
+**Why TF-IDF?**  
+Deterministic, offline, easy to explain metrics. Production path: embeddings + vector DB.
+
+**How would you evaluate?**  
+Precision@k on FAQ labels, human groundedness checklist, latency, and logging of source path (retrieval vs template).
+
+**What breaks first at scale?**  
+SQLite write contention, single-process embedding load, lack of auth/rate limits — all roadmap items.
 
 ## Demo
 
-```bash
-pip install -r requirements.txt
-python src/main.py
-```
-
-Try: `hello` → `places to visit` → `budget planning` → `history` → `exit`
-
-## Questions
-
-**Why modular design instead of one script?**  
-Clear layers make it easier to replace intent logic with stronger NLP later.
-
-**What is the 6A framework?**  
-Attractions, Accessibility, Amenities, Activities, Available Packages, Ancillary Services — used in the report to map chatbot value.
-
-**Prototype vs full report?**  
-The repo is a focused prototype; the report covers broader research, diagrams, and future web/API integrations.
+CLI + `POST /chat` + show `retrieval_scores` in JSON.

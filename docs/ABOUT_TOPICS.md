@@ -1,10 +1,9 @@
-# GitHub About (set in repo Settings / sidebar)
+# GitHub About
 
-**Description (suggested):**
-B.Tech Major Project: AI-Driven Chatbot Framework for Smart Tourism | NLP, Conversational AI, Modular Python Prototype
+**Description:**
+Applied AI tourism chatbot | FastAPI · RAG-style retrieval · NLP · Docker · SQLite logging
 
-**Homepage:**
-https://nikhilamaragani-jpg.github.io/
+**Homepage:** https://nikhilamaragani-jpg.github.io/
 
-**Topics (add one by one):**
-python, nlp, chatbot, conversational-ai, machine-learning, tourism, sqlite, btech-project
+**Topics:**
+python, fastapi, nlp, rag, conversational-ai, machine-learning, docker, applied-ai, rest-api, scikit-learn

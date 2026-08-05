@@ -1,23 +1,33 @@
 """
-AI-Driven Chatbot Framework for Smart Tourism
-Major-project prototype: intent + knowledge base + SQLite history
+Smart Tourism Chatbot — CLI entrypoint.
+
+Uses the same ChatService as the FastAPI layer for consistent behaviour.
 """
 
-import sys
+from __future__ import annotations
+
+import logging
 import os
+import sys
+from pathlib import Path
 
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from chatbot.intent import detect_intent
-from chatbot.response import generate_response
-from chatbot.knowledge import search_knowledge
-from chatbot.database import init_db, save_message, get_recent_messages
+from chatbot.service import get_chat_service  # noqa: E402
+from config.settings import settings  # noqa: E402
+
+logging.basicConfig(
+    level=getattr(logging, settings.log_level.upper(), logging.INFO),
+    format="%(asctime)s %(levelname)s %(name)s - %(message)s",
+)
 
 
 def print_banner() -> None:
     print("=" * 60)
-    print("  Smart Tourism Chatbot  |  B.Tech Major Project Prototype")
-    print("  Intent detection · Knowledge base · Conversation logging")
+    print("  Smart Tourism Chatbot  |  Applied AI Portfolio Demo")
+    print("  RAG-style retrieval · Intent routing · SQLite logging")
     print("  Commands: history | help | exit")
     print("=" * 60)
     print()
@@ -33,15 +43,20 @@ def print_help() -> None:
         "  - budget planning / packing list\n"
         "  - itinerary for 3 days\n"
         "Commands: history | help | exit\n"
+        "API: uvicorn src.api.app:app --reload\n"
     )
 
 
 def main() -> None:
-    init_db()
+    service = get_chat_service()
     print_banner()
 
     while True:
-        user_input = input("You: ").strip()
+        try:
+            user_input = input("You: ").strip()
+        except (EOFError, KeyboardInterrupt):
+            print("\nBot: Session ended.")
+            break
 
         if user_input.lower() in {"exit", "quit", "bye"}:
             print("Bot: Thank you! Have a great trip.")
@@ -52,7 +67,7 @@ def main() -> None:
             continue
 
         if user_input.lower() == "history":
-            rows = get_recent_messages(5)
+            rows = service.history(5)
             if not rows:
                 print("Bot: No conversation history yet.\n")
             else:
@@ -66,16 +81,8 @@ def main() -> None:
         if not user_input:
             continue
 
-        knowledge_answer = search_knowledge(user_input)
-        if knowledge_answer:
-            intent = "knowledge_faq"
-            reply = knowledge_answer
-        else:
-            intent = detect_intent(user_input)
-            reply = generate_response(intent)
-
-        save_message(user_input, intent, reply)
-        print(f"Bot ({intent}): {reply}\n")
+        result = service.chat(user_input)
+        print(f"Bot ({result.intent}|{result.source}): {result.reply}\n")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,9 @@
+[project]
+name = "smart-tourism-chatbot"
+version = "0.2.0"
+description = "Applied AI tourism chatbot with RAG-style retrieval and FastAPI"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = [".", "src"]
+testpaths = ["tests"]

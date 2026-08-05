@@ -2,19 +2,16 @@
 
 | Field | Detail |
 |-------|--------|
-| Type | B.Tech Major Project |
-| Author | Amaragani Nikhil Sai (22X31A0513) |
-| Institution | SIIET (JNTUH) |
-| Guide | Ms. K. Mounika |
-| Year | 2025–2026 |
+| Type | Portfolio flagship · Applied AI / NLP service |
+| Author | Amaragani Nikhil Sai |
+| Stack | Python, FastAPI, scikit-learn TF-IDF, SQLite, Docker |
+| Audience | Junior Data / ML / Applied AI hiring |
 
 ## Goal
 
-Design and demonstrate an AI-oriented tourism chatbot framework: intent understanding, knowledge-base answers, multi-turn interaction patterns, and logging for review.
+Ship a runnable tourism assistant that shows **retrieval-grounded answers**, **API design**, and **engineering packaging** suitable for entry-level EU tech interviews.
 
-## Prototype vs report
+## Honest scope
 
-- **This repo:** runnable CLI prototype proving modular architecture.  
-- **Report:** literature/system analysis, UML, web screens, broader NLP/API vision.  
-
-Keep claims aligned with what `python src/main.py` actually runs.
+- **Implemented:** local RAG-style retrieval, intent fallback, REST API, logging, Docker, tests.  
+- **Not claimed live:** managed vector DB, paid LLM production traffic, multi-tenant SaaS.  

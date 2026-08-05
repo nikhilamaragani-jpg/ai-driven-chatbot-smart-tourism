@@ -2,135 +2,156 @@
 
 **B.Tech Major Project** | Conversational AI | NLP | Smart Tourism
 
-An academic project focused on designing a conversational AI chatbot concept for smart tourism applications. The system aims to assist users with tourism-related queries, recommendations, and basic travel planning through natural language interaction.
+A practical chatbot prototype for smart tourism assistance. It detects user intent, generates domain-specific responses, and stores conversation history in SQLite.
 
 ---
 
 ## Overview
 
-This project explores the design and architecture of an AI-powered chatbot for the tourism domain. It focuses on understanding user intent, handling tourism-related queries, and providing structured responses for travel assistance.
+This project implements a modular tourism chatbot that can handle queries related to hotels, attractions, food, transport, budget, and itinerary planning.
 
-**Project Type:** Academic / Prototype  
-**Status:** Architecture + Concept Implementation
-
----
-
-## Problem Statement
-
-Tourists often face challenges in getting quick, relevant, and personalized information while planning trips. Traditional websites and apps may not provide conversational, context-aware assistance.
-
-This project aims to design a chatbot framework that can:
-- Understand tourism-related queries
-- Provide relevant suggestions
-- Support basic conversational flow for travel planning
+**Project Type:** Academic Prototype with working core modules  
+**Status:** Runnable CLI chatbot + SQLite history
 
 ---
 
-## Key Features (Conceptual)
+## Architecture
 
-- Intent recognition for tourism-related queries
-- Basic conversational flow for travel assistance
+```text
+User Input
+    |
+    v
++------------------+
+| Intent Detection |  (keyword-based intent classification)
++------------------+
+    |
+    v
++------------------+
+| Response Engine  |  (tourism-domain response templates)
++------------------+
+    |
+    v
++------------------+
+| SQLite Database  |  (stores chat history)
++------------------+
+    |
+    v
+Bot Reply + Optional History View
+```
+
+---
+
+## Features
+
+- Intent detection for multiple tourism categories
 - Structured response generation
-- Modular system architecture
-- Foundation for future NLP / RAG enhancements
+- SQLite-based conversation history
+- Simple CLI interface
+- Modular project structure for future NLP/RAG upgrades
 
 ---
 
 ## Tech Stack
 
-| Area              | Technologies                  |
-|-------------------|-------------------------------|
-| Language          | Python                        |
-| NLP Concepts      | Intent classification, basic NLP |
-| Backend (Planned) | FastAPI                       |
-| Tools             | Git, Jupyter                  |
+| Area | Technology |
+|------|------------|
+| Language | Python |
+| Intent Logic | Rule/keyword-based NLP |
+| Storage | SQLite |
+| Interface | Command Line |
+| Tools | Git |
 
 ---
 
 ## Project Structure
 
-```
+```text
 ai-driven-chatbot-smart-tourism/
-━━ README.md
-━━ requirements.txt
-━━ .gitignore
-━━ LICENSE
-━━ src/
+├── README.md
+├── requirements.txt
+├── data/                  # SQLite DB created at runtime
+├── src/
 │   ├── main.py
 │   ├── chatbot/
-│   │   ├── __init__.py
 │   │   ├── intent.py
-│   │   └── response.py
+│   │   ├── response.py
+│   │   ├── database.py
+│   │   └── __init__.py
 │   └── utils/
-│       └── __init__.py
-━━ data/
-━━ notebooks/
-━━ docs/
+└── LICENSE
 ```
 
 ---
 
-## How to Run (Basic Setup)
+## How to Run
 
 ```bash
-# Clone the repository
 git clone https://github.com/nikhilamaragani-jpg/ai-driven-chatbot-smart-tourism.git
 cd ai-driven-chatbot-smart-tourism
 
-# Create virtual environment
 python -m venv venv
-source venv/bin/activate   # Windows: venv\Scripts\activate
-
-# Install dependencies
+source venv/bin/activate          # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
-# Run (when implementation is available)
 python src/main.py
+```
+
+**Commands inside chatbot:**
+- Type normal travel questions
+- Type `history` to view recent chats
+- Type `exit` to quit
+
+---
+
+## Example
+
+```text
+You: hello
+Bot (greeting): Hello! I am your Smart Tourism assistant...
+
+You: best hotels in paris
+Bot (hotel_query): I can help with hotel suggestions...
+
+You: history
+--- Recent Conversations ---
 ```
 
 ---
 
 ## Current Status
 
-- [x] Project idea and problem definition
-- [x] High-level architecture design
-- [x] Repository structure
-- [ ] Core chatbot logic implementation
-- [ ] Intent classification module
-- [ ] API layer (FastAPI)
-- [ ] Testing and documentation
+- [x] Problem definition
+- [x] Modular architecture
+- [x] Intent detection module
+- [x] Response generation module
+- [x] SQLite chat history
+- [x] Runnable CLI prototype
+- [ ] Advanced ML-based intent classification
+- [ ] FastAPI interface
+- [ ] RAG-based knowledge responses
 
 ---
 
 ## Learning Outcomes
 
-- Understanding conversational AI design
-- Applying NLP concepts to a real domain (tourism)
-- Designing modular software architecture
-- Working with Python project structure and Git
-
----
-
-## Future Improvements
-
-- Implement intent classification with scikit-learn or simple rule-based approach
-- Add FastAPI endpoints for chat interaction
-- Integrate basic knowledge base for tourism FAQs
-- Explore RAG-based improvements in future versions
+- Conversational system design
+- Intent classification basics
+- Modular Python project structure
+- SQLite integration for application data
 
 ---
 
 ## Author
 
 **Amaragani Nikhil Sai**  
-B.Tech in Computer Science and Engineering  
+B.Tech in Computer Science and Engineering
 
-- GitHub: [nikhilamaragani-jpg](https://github.com/nikhilamaragani-jpg)  
-- LinkedIn: [Amaragani Nikhil Sai](https://linkedin.com/in/amaraganinikhilsai)  
+- GitHub: [nikhilamaragani-jpg](https://github.com/nikhilamaragani-jpg)
+- LinkedIn: [Amaragani Nikhil Sai](https://linkedin.com/in/amaraganinikhilsai)
 - Email: nikhilamaragani@gmail.com
 
 ---
 
 ## License
 
-This project is licensed under the MIT License.
+MIT License

@@ -7,13 +7,13 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Runnable%20Prototype-success)](https://github.com/nikhilamaragani-jpg/ai-driven-chatbot-smart-tourism)
-[![Domain](https://img.shields.io/badge/Domain-Smart%20Tourism-blue)](https://github.com/nikhilamaragani-jpg/ai-driven-chatbot-smart-tourism)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Website-5b8cff)](https://nikhilamaragani-jpg.github.io/portfolio/)
 
 **Author:** Amaragani Nikhil Sai (22X31A0513)  
 **Institution:** Sri Indu Institute of Engineering and Technology (JNTUH)  
 **Guide:** Ms. K. Mounika · Department of CSE · 2025–2026
 
-[Run](#quick-start) · [Architecture](#system-architecture) · [Skills demonstrated](#skills-recruiters-care-about) · [Docs](docs/PROJECT_BRIEF.md)
+[Run](#quick-start) · [Interview guide](docs/INTERVIEW.md) · [Demo](docs/DEMO.md) · [Report summary](docs/REPORT_SUMMARY.md) · [Resume bullets](docs/RESUME_BULLETS.md)
 
 </div>
 
@@ -28,8 +28,6 @@ This major project delivers:
 1. A **systematic framing** of AI chatbots for smart tourism (classification, architecture, tools landscape, 6A tourism framework impact).
 2. A **runnable modular chatbot** that demonstrates intent detection, knowledge-base answers, response generation, and **conversation logging**.
 
-The implementation is intentionally clean and extensible toward NLP engines, multilingual support, and booking APIs described in the full report.
-
 ---
 
 ## Problem Statement
@@ -41,16 +39,6 @@ The implementation is intentionally clean and extensible toward NLP engines, mul
 | Generic answers | Knowledge-base tourism FAQs & recommendations |
 | Weak analytics | SQLite chat history for review |
 | Isolated tools | Modular layers ready for API integration |
-
----
-
-## Objectives (from project report)
-
-- Design an AI-oriented tourism chatbot that supports natural-language queries
-- Provide destination / hotel / activity style assistance via structured knowledge
-- Support multi-turn interaction without forcing users to restart context every time
-- Persist interactions for analysis and continuous improvement
-- Keep architecture aligned with smart tourism needs (personalization, 24/7 support, integration readiness)
 
 ---
 
@@ -80,40 +68,6 @@ User (CLI today · Web UI tomorrow)
 └─────────────────────────────┘
 ```
 
-**Report-aligned components:** preprocessing concepts · NLP/intent · knowledge base · context management · response generation · analytics hooks · external integration points (hotels/airlines/packages).
-
----
-
-## Tech Stack
-
-| Layer | Technology |
-|-------|------------|
-| Language | Python 3 |
-| Core design | Modular package (`src/chatbot/`) |
-| Storage | SQLite |
-| Interface | CLI (demo) |
-| Report stack vision | AI/ML/NLP · DBMS · HTML/CSS/JS · APIs |
-
----
-
-## Repository Structure
-
-```text
-ai-driven-chatbot-smart-tourism/
-├── docs/
-│   └── PROJECT_BRIEF.md      # Report-aligned brief for hiring managers
-├── src/
-│   ├── main.py               # CLI entry
-│   └── chatbot/
-│       ├── intent.py         # Intent classification
-│       ├── knowledge.py      # Tourism knowledge base
-│       ├── response.py       # Response generation
-│       └── database.py       # Chat history (SQLite)
-├── requirements.txt
-├── LICENSE
-└── README.md
-```
-
 ---
 
 ## Quick Start
@@ -125,26 +79,20 @@ pip install -r requirements.txt
 python src/main.py
 ```
 
-**Try:**
-- `hello` / `hi`
-- `best hotels in paris` / `places to visit`
-- `visa requirements` / `how to reach`
-- `history`
-- `exit`
+**Try:** `hello` · `places to visit` · `visa requirements` · `budget planning` · `history` · `help` · `exit`
 
 ---
 
-## Features
+## Documentation suite (elite portfolio pack)
 
-- [x] Intent-based query routing for tourism domains
-- [x] Knowledge-base driven answers (destinations, hotels, activities concepts)
-- [x] Structured response generation
-- [x] Persistent conversation logging
-- [x] Modular code layout for extension
-- [ ] Transformer / LLM backend
-- [ ] Multilingual support
-- [ ] Live booking / travel API integrations
-- [ ] Web dashboard (report screens: welcome, auth, chatbot, profile)
+| Doc | Purpose |
+|-----|---------|
+| [INTERVIEW.md](docs/INTERVIEW.md) | 60s pitch, Q&A, demo script |
+| [DEMO.md](docs/DEMO.md) | Expected terminal walkthrough + mermaid |
+| [REPORT_SUMMARY.md](docs/REPORT_SUMMARY.md) | Academic report condensed for recruiters |
+| [RESUME_BULLETS.md](docs/RESUME_BULLETS.md) | Copy-ready resume / LinkedIn bullets |
+| [CONTRIBUTING.md](docs/CONTRIBUTING.md) | Dev notes |
+| [PROJECT_BRIEF.md](docs/PROJECT_BRIEF.md) | Hiring-manager brief |
 
 ---
 
@@ -156,32 +104,17 @@ python src/main.py
 | Conversational AI basics | Intent + knowledge + response pipeline |
 | Software structure | Package modules, single entrypoint |
 | Data persistence | SQLite history |
-| Documentation | Report-aligned README + brief |
+| Documentation | Full recruiter/interview pack |
 | Product thinking | 6A framework / smart tourism framing |
-
----
-
-## Academic Context
-
-- **Type:** B.Tech Major Project Report + implementation prototype
-- **College:** Sri Indu Institute of Engineering and Technology
-- **Affiliation:** JNTUH
-- **Student:** A. Nikhil Sai · Roll No. 22X31A0513
-
-Full report PDF available on request / portfolio materials.
 
 ---
 
 ## Author
 
 **Amaragani Nikhil Sai**  
-B.Tech CSE · Aspiring AI / Data / Intelligent Systems Engineer  
-
-- GitHub: [nikhilamaragani-jpg](https://github.com/nikhilamaragani-jpg)
-- LinkedIn: [nikhil-sai-amaragani](https://www.linkedin.com/in/nikhil-sai-amaragani-219115382)
-- Email: nikhilamaragani@gmail.com
-
----
+Portfolio: https://nikhilamaragani-jpg.github.io/portfolio/  
+LinkedIn: https://www.linkedin.com/in/nikhil-sai-amaragani-219115382  
+Email: nikhilamaragani@gmail.com
 
 ## License
 

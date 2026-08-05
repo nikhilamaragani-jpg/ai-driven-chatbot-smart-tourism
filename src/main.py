@@ -1,6 +1,6 @@
 """
 AI-Driven Chatbot Framework for Smart Tourism
-Prototype with intent detection + knowledge base + SQLite history
+Major-project prototype: intent + knowledge base + SQLite history
 """
 
 import sys
@@ -14,21 +14,42 @@ from chatbot.knowledge import search_knowledge
 from chatbot.database import init_db, save_message, get_recent_messages
 
 
-def main():
-    init_db()
-
-    print("=" * 55)
-    print("Smart Tourism Chatbot - Prototype")
-    print("Commands: 'history' to view recent chats | 'exit' to quit")
-    print("=" * 55)
+def print_banner() -> None:
+    print("=" * 60)
+    print("  Smart Tourism Chatbot  |  B.Tech Major Project Prototype")
+    print("  Intent detection · Knowledge base · Conversation logging")
+    print("  Commands: history | help | exit")
+    print("=" * 60)
     print()
+
+
+def print_help() -> None:
+    print(
+        "\nBot: Try questions like:\n"
+        "  - best hotels in Paris\n"
+        "  - places to visit / museum ideas\n"
+        "  - visa requirements / how to reach\n"
+        "  - local transport / metro tips\n"
+        "  - budget planning / packing list\n"
+        "  - itinerary for 3 days\n"
+        "Commands: history | help | exit\n"
+    )
+
+
+def main() -> None:
+    init_db()
+    print_banner()
 
     while True:
         user_input = input("You: ").strip()
 
-        if user_input.lower() in ["exit", "quit", "bye"]:
-            print("Bot: Thank you! Have a great trip!")
+        if user_input.lower() in {"exit", "quit", "bye"}:
+            print("Bot: Thank you! Have a great trip.")
             break
+
+        if user_input.lower() == "help":
+            print_help()
+            continue
 
         if user_input.lower() == "history":
             rows = get_recent_messages(5)

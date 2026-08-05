@@ -7,7 +7,6 @@
 | Institution | SIIET (JNTUH) |
 | Guide | Ms. K. Mounika |
 | Year | 2025–2026 |
-| Domain | Conversational AI, NLP concepts, smart tourism |
 
 ## Goal
 

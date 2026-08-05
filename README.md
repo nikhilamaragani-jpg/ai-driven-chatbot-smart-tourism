@@ -7,7 +7,6 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Runnable%20Prototype-success)](https://github.com/nikhilamaragani-jpg/ai-driven-chatbot-smart-tourism)
-[![Topics](https://img.shields.io/badge/topics-python%20%7C%20nlp%20%7C%20chatbot-informational)](docs/ABOUT_TOPICS.md)
 
 **Amaragani Nikhil Sai** · 22X31A0513 · SIIET (JNTUH) · Guide: Ms. K. Mounika · 2025–2026
 
@@ -19,7 +18,7 @@
 
 ## Problem
 
-Tourism support is information-heavy. Many existing bots rely on fixed scripts, lose multi-turn context, and give generic answers. This major project studies AI chatbots for smart tourism and ships a **runnable modular prototype** for intent handling, knowledge-base answers, and conversation logging.
+Tourism support is information-heavy. Many bots rely on fixed scripts, lose multi-turn context, and give generic answers. This major project studies AI chatbots for smart tourism and ships a **runnable modular prototype** for intent handling, knowledge-base answers, and conversation logging.
 
 | Gap | This project |
 |-----|----------------|
@@ -58,7 +57,7 @@ Persistence (SQLite) → conversation history
 | Design | Modular package `src/chatbot/` |
 | Storage | SQLite |
 | Interface | CLI demo |
-| Report vision | NLP engines, web UI, external booking APIs |
+| Report vision | Broader NLP engines, web UI, external APIs |
 
 ---
 
@@ -100,7 +99,7 @@ python src/main.py
 - [ ] Transformer / LLM backend  
 - [ ] Multilingual support  
 - [ ] Live booking / travel API integrations  
-- [ ] Full web UI (welcome, auth, dashboard screens from report)  
+- [ ] Full web UI from report screens  
 
 ---
 
@@ -108,11 +107,10 @@ python src/main.py
 
 | File | Purpose |
 |------|---------|
-| [docs/PROJECT_BRIEF.md](docs/PROJECT_BRIEF.md) | Academic + technical brief |
+| [docs/PROJECT_BRIEF.md](docs/PROJECT_BRIEF.md) | Technical brief |
 | [docs/DEMO.md](docs/DEMO.md) | Demo walkthrough |
 | [docs/INTERVIEW.md](docs/INTERVIEW.md) | Pitch, Q&A, demo script |
 | [docs/RESUME_BULLETS.md](docs/RESUME_BULLETS.md) | Project bullets |
-| [docs/REPORT_SUMMARY.md](docs/REPORT_SUMMARY.md) | Report condensed |
 | [docs/ABOUT_TOPICS.md](docs/ABOUT_TOPICS.md) | Suggested GitHub topics |
 
 **Suggested topics:** `python` · `nlp` · `chatbot` · `conversational-ai` · `machine-learning` · `tourism`

@@ -5,18 +5,13 @@ pip install -r requirements.txt
 python src/main.py
 ```
 
-Expected flow:
-
 ```text
-============================================================
-  Smart Tourism Chatbot  |  B.Tech Major Project Prototype
-============================================================
+Smart Tourism Chatbot  |  B.Tech Major Project Prototype
 You: hello
-Bot (greeting): ...
+Bot: ...
 You: places to visit
-Bot (knowledge_faq / intent): ...
+Bot: ...
 You: history
---- Recent Conversations ---
 You: exit
 ```
 
@@ -28,5 +23,4 @@ flowchart TD
   D --> E[Generate response]
   C --> F[Save SQLite]
   E --> F
-  F --> G[Reply]
 ```

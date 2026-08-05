@@ -1,85 +1,122 @@
+<div align="center">
+
 # AI-Driven Chatbot Framework for Smart Tourism
 
-**B.Tech Major Project** | Conversational AI | NLP | Smart Tourism System Architecture
+### B.Tech Major Project · Conversational AI · NLP · System Architecture
 
-A practical chatbot prototype for smart tourism assistance featuring intent detection, knowledge-base FAQs, structured responses, and SQLite conversation history. This implementation draws from a systematic review of AI chatbots in tourism and a proposed multi-layer framework.
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Runnable%20Prototype-success)](https://github.com/nikhilamaragani-jpg/ai-driven-chatbot-smart-tourism)
+[![Domain](https://img.shields.io/badge/Domain-Smart%20Tourism-blue)](https://github.com/nikhilamaragani-jpg/ai-driven-chatbot-smart-tourism)
 
----
+**Author:** Amaragani Nikhil Sai (22X31A0513)  
+**Institution:** Sri Indu Institute of Engineering and Technology (JNTUH)  
+**Guide:** Ms. K. Mounika · Department of CSE · 2025–2026
 
-## Overview
+[Run](#quick-start) · [Architecture](#system-architecture) · [Skills demonstrated](#skills-recruiters-care-about) · [Docs](docs/PROJECT_BRIEF.md)
 
-The system helps travelers with destination information, hotels, activities, and common queries. Core capabilities:
-
-- Intent classification for tourism queries
-- Knowledge base matching for FAQs and recommendations
-- Context-aware response generation
-- Persistent chat history via SQLite
-- Extensible design toward NLP engines and external integrations
-
-**Status:** Runnable CLI chatbot with knowledge base + database logging  
-**Project Focus:** System architecture, knowledge management, and conversational flow for smart tourism
+</div>
 
 ---
 
-## System Architecture (Aligned with Project Report)
+## Executive Summary (for recruiters)
+
+Tourism is information-intensive. Travelers need 24/7 help with destinations, hotels, transport, packages, and follow-up questions. Many existing bots are **rule-only**, lose context, and fail at personalization.
+
+This major project delivers:
+
+1. A **systematic framing** of AI chatbots for smart tourism (classification, architecture, tools landscape, 6A tourism framework impact).
+2. A **runnable modular chatbot** that demonstrates intent detection, knowledge-base answers, response generation, and **conversation logging**.
+
+The implementation is intentionally clean and extensible toward NLP engines, multilingual support, and booking APIs described in the full report.
+
+---
+
+## Problem Statement
+
+| Gap in existing systems | What this project targets |
+|-------------------------|---------------------------|
+| Keyword / script-only bots | Intent-based routing |
+| No conversation memory | Session-style multi-turn CLI + history |
+| Generic answers | Knowledge-base tourism FAQs & recommendations |
+| Weak analytics | SQLite chat history for review |
+| Isolated tools | Modular layers ready for API integration |
+
+---
+
+## Objectives (from project report)
+
+- Design an AI-oriented tourism chatbot that supports natural-language queries
+- Provide destination / hotel / activity style assistance via structured knowledge
+- Support multi-turn interaction without forcing users to restart context every time
+- Persist interactions for analysis and continuous improvement
+- Keep architecture aligned with smart tourism needs (personalization, 24/7 support, integration readiness)
+
+---
+
+## System Architecture
 
 ```text
-User Interface (CLI / future Web)
-        |
-        v
-+---------------------------+
-| Query Processing Layer    |  Intent detection + NLP-style parsing
-+---------------------------+
-        |
-        v
-+---------------------------+
-| Knowledge Base + AI Layer |  FAQ match + recommendation logic
-+---------------------------+
-        |
-        v
-+---------------------------+
-| Response Generation       |  Structured, readable replies
-+---------------------------+
-        |
-        v
-+---------------------------+
-| Database Layer (SQLite)   |  Conversation history & metadata
-+---------------------------+
+User (CLI today · Web UI tomorrow)
+              |
+              v
+┌─────────────────────────────┐
+│  Query Processing Layer     │  Intent detection (keyword / rule NLP-style)
+└─────────────────────────────┘
+              |
+              v
+┌─────────────────────────────┐
+│  Knowledge + Logic Layer    │  FAQ match · recommendations · tourism content
+└─────────────────────────────┘
+              |
+              v
+┌─────────────────────────────┐
+│  Response Generation        │  Templates · structured natural replies
+└─────────────────────────────┘
+              |
+              v
+┌─────────────────────────────┐
+│  Persistence (SQLite)       │  Conversation history · metadata
+└─────────────────────────────┘
 ```
 
-Key components inspired by the full framework: data preprocessing concepts, knowledge bases, context management, response generation, and future integration points (booking systems, multi-language support).
+**Report-aligned components:** preprocessing concepts · NLP/intent · knowledge base · context management · response generation · analytics hooks · external integration points (hotels/airlines/packages).
 
 ---
 
 ## Tech Stack
 
-| Area              | Technology                          |
-|-------------------|-------------------------------------|
-| Language          | Python 3                            |
-| Core Logic        | Custom intent + knowledge modules   |
-| Storage           | SQLite                              |
-| Future Extensions | NLP libraries, OpenAI-style APIs, Django/web UI |
+| Layer | Technology |
+|-------|------------|
+| Language | Python 3 |
+| Core design | Modular package (`src/chatbot/`) |
+| Storage | SQLite |
+| Interface | CLI (demo) |
+| Report stack vision | AI/ML/NLP · DBMS · HTML/CSS/JS · APIs |
 
 ---
 
-## Project Structure
+## Repository Structure
 
 ```text
 ai-driven-chatbot-smart-tourism/
+├── docs/
+│   └── PROJECT_BRIEF.md      # Report-aligned brief for hiring managers
 ├── src/
-│   ├── main.py                 # CLI entry point
+│   ├── main.py               # CLI entry
 │   └── chatbot/
-│       ├── intent.py           # Keyword / rule-based intent detection
-│       ├── knowledge.py        # Tourism FAQ & recommendation knowledge base
-│       ├── response.py         # Response templates & generation
-│       └── database.py         # SQLite chat history
+│       ├── intent.py         # Intent classification
+│       ├── knowledge.py      # Tourism knowledge base
+│       ├── response.py       # Response generation
+│       └── database.py       # Chat history (SQLite)
 ├── requirements.txt
+├── LICENSE
 └── README.md
 ```
 
 ---
 
-## How to Run
+## Quick Start
 
 ```bash
 git clone https://github.com/nikhilamaragani-jpg/ai-driven-chatbot-smart-tourism.git
@@ -88,48 +125,64 @@ pip install -r requirements.txt
 python src/main.py
 ```
 
-**Sample interactions:**
+**Try:**
 - `hello` / `hi`
 - `best hotels in paris` / `places to visit`
 - `visa requirements` / `how to reach`
-- `history` (view conversation log)
+- `history`
 - `exit`
 
 ---
 
-## Key Features from Project Scope
+## Features
 
-- Intent-based routing for tourism queries
-- Knowledge-base driven answers (destinations, hotels, activities concepts)
-- Persistent logging for analytics / review
-- Modular design ready for NLP upgrades and external API integration
-- Focus on real-time information delivery and personalization potential
+- [x] Intent-based query routing for tourism domains
+- [x] Knowledge-base driven answers (destinations, hotels, activities concepts)
+- [x] Structured response generation
+- [x] Persistent conversation logging
+- [x] Modular code layout for extension
+- [ ] Transformer / LLM backend
+- [ ] Multilingual support
+- [ ] Live booking / travel API integrations
+- [ ] Web dashboard (report screens: welcome, auth, chatbot, profile)
 
 ---
 
-## Future Enhancements (from Project Report)
+## Skills Recruiters Care About
 
-- Integration of advanced LLMs / transformer models
-- Multi-language support and translation
-- Voice interface
-- Sentiment-aware responses
-- Booking / travel platform integrations
-- Predictive recommendations and analytics
+| Skill | Evidence in this repo |
+|-------|------------------------|
+| Problem decomposition | Tourism pain points → layered architecture |
+| Conversational AI basics | Intent + knowledge + response pipeline |
+| Software structure | Package modules, single entrypoint |
+| Data persistence | SQLite history |
+| Documentation | Report-aligned README + brief |
+| Product thinking | 6A framework / smart tourism framing |
+
+---
+
+## Academic Context
+
+- **Type:** B.Tech Major Project Report + implementation prototype
+- **College:** Sri Indu Institute of Engineering and Technology
+- **Affiliation:** JNTUH
+- **Student:** A. Nikhil Sai · Roll No. 22X31A0513
+
+Full report PDF available on request / portfolio materials.
 
 ---
 
 ## Author
 
 **Amaragani Nikhil Sai**  
-B.Tech in Computer Science and Engineering  
-Sri Indu Institute of Engineering and Technology
+B.Tech CSE · Aspiring AI / Data / Intelligent Systems Engineer  
 
 - GitHub: [nikhilamaragani-jpg](https://github.com/nikhilamaragani-jpg)
-- LinkedIn: [Amaragani Nikhil Sai](https://linkedin.com/in/amaraganinikhilsai)
+- LinkedIn: [nikhil-sai-amaragani](https://www.linkedin.com/in/nikhil-sai-amaragani-219115382)
 - Email: nikhilamaragani@gmail.com
 
 ---
 
 ## License
 
-MIT License
+MIT License — see [LICENSE](LICENSE).

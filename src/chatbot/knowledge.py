@@ -2,6 +2,8 @@
 Simple tourism knowledge base for FAQ-style answers
 """
 
+from typing import Optional
+
 KNOWLEDGE_BASE = {
     "visa": "Visa requirements depend on your nationality and destination. Always check the official embassy or immigration website before travel.",
     "best time": "The best time to visit depends on the destination. Many popular cities are pleasant in spring and autumn due to milder weather.",
@@ -12,7 +14,7 @@ KNOWLEDGE_BASE = {
 }
 
 
-def search_knowledge(user_message: str) -> str | None:
+def search_knowledge(user_message: str) -> Optional[str]:
     message = user_message.lower()
     for key, answer in KNOWLEDGE_BASE.items():
         if key in message:

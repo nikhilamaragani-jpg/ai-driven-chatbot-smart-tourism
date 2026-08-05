@@ -1,0 +1,14 @@
+{
+  "n": 6,
+  "hits": 6,
+  "hit_rate": 1.0,
+  "note": "Sample artifact for recruiters. Re-run: python scripts/evaluate_retrieval.py",
+  "cases": [
+    {"query": "visa requirements for travel", "expected": "visa", "hit": true},
+    {"query": "metro transport tips", "expected": "metro", "hit": true},
+    {"query": "budget planning for a trip", "expected": "budget", "hit": true},
+    {"query": "places to visit museums", "expected": "place", "hit": true},
+    {"query": "packing list essentials", "expected": "packing", "hit": true},
+    {"query": "hotel booking advice", "expected": "hotel", "hit": true}
+  ]
+}

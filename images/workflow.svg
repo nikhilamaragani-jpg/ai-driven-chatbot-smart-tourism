@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="220" viewBox="0 0 900 220">
+  <rect width="900" height="220" fill="#0b1220"/>
+  <text x="20" y="32" fill="#e8eefc" font-family="Segoe UI, Arial" font-size="18" font-weight="700">Project workflow</text>
+  <rect x="20" y="70" width="140" height="60" rx="8" fill="#1e293b" stroke="#5b8cff"/><text x="45" y="105" fill="#e8eefc" font-size="13" font-family="Segoe UI, Arial">1. Query in</text>
+  <rect x="190" y="70" width="140" height="60" rx="8" fill="#1e293b" stroke="#5b8cff"/><text x="210" y="105" fill="#e8eefc" font-size="13" font-family="Segoe UI, Arial">2. Retrieve</text>
+  <rect x="360" y="70" width="140" height="60" rx="8" fill="#1e293b" stroke="#5b8cff"/><text x="385" y="105" fill="#e8eefc" font-size="13" font-family="Segoe UI, Arial">3. Compose</text>
+  <rect x="530" y="70" width="140" height="60" rx="8" fill="#1e293b" stroke="#5b8cff"/><text x="560" y="105" fill="#e8eefc" font-size="13" font-family="Segoe UI, Arial">4. Log</text>
+  <rect x="700" y="70" width="160" height="60" rx="8" fill="#1e293b" stroke="#5b8cff"/><text x="720" y="105" fill="#e8eefc" font-size="13" font-family="Segoe UI, Arial">5. JSON reply</text>
+  <text x="20" y="180" fill="#94a3b8" font-size="12" font-family="Segoe UI, Arial">Evaluate with scripts/evaluate_retrieval.py · Secure with API_KEY · Package with Docker</text>
+</svg>

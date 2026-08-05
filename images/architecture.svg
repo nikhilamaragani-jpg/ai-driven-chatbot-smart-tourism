@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" viewBox="0 0 920 420">
+  <rect width="920" height="420" fill="#0b1220"/>
+  <text x="24" y="36" fill="#e8eefc" font-family="Segoe UI, Arial" font-size="20" font-weight="700">Smart Tourism Chatbot — Architecture</text>
+  <rect x="40" y="80" width="160" height="70" rx="10" fill="#1e293b" stroke="#5b8cff"/>
+  <text x="60" y="120" fill="#e8eefc" font-family="Segoe UI, Arial" font-size="14">Client (CLI/HTTP)</text>
+  <rect x="260" y="80" width="180" height="70" rx="10" fill="#1e293b" stroke="#5b8cff"/>
+  <text x="285" y="120" fill="#e8eefc" font-family="Segoe UI, Arial" font-size="14">FastAPI + Auth</text>
+  <rect x="500" y="50" width="180" height="60" rx="10" fill="#1e293b" stroke="#34d399"/>
+  <text x="520" y="85" fill="#e8eefc" font-family="Segoe UI, Arial" font-size="14">Retriever (RAG-style)</text>
+  <rect x="500" y="130" width="180" height="60" rx="10" fill="#1e293b" stroke="#fbbf24"/>
+  <text x="530" y="165" fill="#e8eefc" font-family="Segoe UI, Arial" font-size="14">Intent Router</text>
+  <rect x="740" y="80" width="140" height="70" rx="10" fill="#1e293b" stroke="#a78bfa"/>
+  <text x="760" y="120" fill="#e8eefc" font-family="Segoe UI, Arial" font-size="14">Composer / LLM</text>
+  <rect x="360" y="260" width="220" height="70" rx="10" fill="#1e293b" stroke="#94a3b8"/>
+  <text x="390" y="300" fill="#e8eefc" font-family="Segoe UI, Arial" font-size="14">SQLite Conversation Log</text>
+  <line x1="200" y1="115" x2="260" y2="115" stroke="#64748b" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="440" y1="115" x2="500" y2="80" stroke="#64748b" stroke-width="2"/>
+  <line x1="440" y1="115" x2="500" y2="160" stroke="#64748b" stroke-width="2"/>
+  <line x1="680" y1="115" x2="740" y2="115" stroke="#64748b" stroke-width="2"/>
+  <line x1="470" y1="150" x2="470" y2="260" stroke="#64748b" stroke-width="2"/>
+  <text x="24" y="390" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="12">Portfolio-grade design. Offline demo uses local retrieval; vector DB + LLM are optional upgrades.</text>
+</svg>

@@ -3,11 +3,12 @@
 from __future__ import annotations
 
 import logging
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
 from typing import Any, Dict, List, Optional
 
 from .database import get_recent_messages, init_db, save_message
 from .intent import detect_intent
+from .llm import generate_with_llm
 from .response import generate_response
 from .retriever import get_retriever
 
@@ -18,7 +19,7 @@ logger = logging.getLogger(__name__)
 class ChatResult:
     reply: str
     intent: str
-    source: str  # retrieval | intent_template
+    source: str  # retrieval | intent_template | llm
     retrieval_scores: List[Dict[str, Any]]
 
     def to_dict(self) -> Dict[str, Any]:
@@ -44,13 +45,15 @@ class ChatService:
         answer, chunks = self.retriever.best_answer(message)
         intent = detect_intent(message)
         scores = [{"key": c.key, "score": round(c.score, 4)} for c in chunks[: self.top_k]]
+        contexts = [c.text for c in chunks[: self.top_k]]
 
-        if answer:
-            reply = answer
-            source = "retrieval"
+        llm_text = generate_with_llm(message, contexts)
+        if llm_text:
+            reply, source = llm_text, "llm"
+        elif answer:
+            reply, source = answer, "retrieval"
         else:
-            reply = generate_response(intent)
-            source = "intent_template"
+            reply, source = generate_response(intent), "intent_template"
 
         if persist:
             save_message(message, f"{intent}|{source}", reply)

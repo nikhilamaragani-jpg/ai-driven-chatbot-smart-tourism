@@ -1,75 +1,67 @@
 # AI-Driven Chatbot Framework for Smart Tourism
 
 **B.Tech Major Project**  
-**Author**: Amaragani Nikhil Sai  
+**Author**: Amaragani Nikhil Sai (22X31A0513)  
 **Institution**: Sri Indu Institute of Engineering and Technology  
-**Guide**: Ms. K. Mounika  
-**Status**: Academic project completed (source code being prepared for public release)
+**Guide**: Ms. K. Mounika, Assistant Professor  
+**Industry Partner**: MANAC Infotech
 
 ---
 
-## Project Overview
+## Overview
 
-An intelligent chatbot framework designed to assist users with travel planning and provide personalized recommendations in smart tourism scenarios. The system focuses on conversational flow design, response generation logic, and practical user assistance for real-world travel use cases.
+This major project presents a comprehensive study and system architecture for an **AI-Driven Chatbot Framework** applied to the Smart Tourism domain. It combines a systematic review of chatbot technologies with a practical architectural design tailored for tourism use cases.
 
-This project served as the major project requirement for the B.Tech Computer Science degree.
+## What the Project Covers
 
----
+1. **New classification of chatbots** based on specific criteria
+2. **Conceptual architecture** of chatbots and their key components
+3. Comparison of major chatbot development tools (advantages & disadvantages)
+4. Integration of chatbots in the tourism sector over the past decade
+5. Analysis of chatbot impact using the **6A framework** for tourism
 
-## Key Focus Areas
+## Key Domains & Skills
 
-- Conversational AI and Natural Language Processing fundamentals
-- System architecture for chatbot frameworks
-- User interaction design and response handling
-- Practical automation for tourism-related queries
+- Conversational AI & Natural Language Processing (NLP)
+- System Architecture design
+- Machine Learning / Deep Learning concepts in chatbots
+- Tourism technology applications
+- Systematic literature review & research methodology
 
----
-
-## Skills Demonstrated
-
-- Conversational AI / NLP concepts
-- System architecture thinking
-- Python-based intelligent systems
-- Academic research, documentation, and project presentation
-
----
-
-## Architecture (High-Level)
+## High-Level Conceptual Architecture
 
 ```
 User Query
     ↓
-Input Processing / Intent Handling
+Input Processing / Intent Recognition
     ↓
-Response Generation Logic
+Dialogue Management
+    ↓
+Response Generation (AI / Rule-based / Hybrid)
     ↓
 Contextual Reply to User
 ```
 
-The academic version focused on core conversational flow and practical assistance.  
-A production upgrade is planned under the Applied AI / GenAI stage of the career roadmap.
+The academic work focused on architecture, classification, tool evaluation, and tourism-specific applications. This forms a strong foundation for a modern **RAG-based production chatbot**.
 
----
+## Why This Project Matters for the Career Roadmap
 
-## Future Production Upgrade Path
+This is the **highest-priority B.Tech project** for the GenAI track.  
+It will be upgraded in the `05-applied-ai-genai` repository into a full production RAG system with:
 
-This project will be significantly enhanced in the **05-applied-ai-genai** repository into a full **Retrieval-Augmented Generation (RAG)** system:
-
-- Tourism knowledge base + Vector database
-- LangChain / LlamaIndex orchestration
-- FastAPI serving layer
+- Tourism knowledge base + Vector Database
+- LangChain / LlamaIndex
+- FastAPI serving
 - Docker deployment
-- Basic evaluation (relevance / faithfulness metrics)
+- Basic evaluation metrics (RAGAS-style)
+
+## Project Status
+
+Major project completed (2025–2026).  
+This repository documents the system architecture, research findings, and design. Full source code and production upgrade will be added progressively.
 
 ---
 
-## Repository Status
-
-This repository currently documents the completed academic major project.  
-Full source code, detailed setup instructions, and screenshots will be added as the portfolio is strengthened.
-
----
-
-**Part of**: Entry-Level Data & AI Career Roadmap  
+**Career Alignment**: Direct foundation for Junior GenAI / Applied AI Engineer roles  
 **Related Stage**: [05-applied-ai-genai](https://github.com/nikhilamaragani-jpg/05-applied-ai-genai)  
 **Author**: [Amaragani Nikhil Sai](https://github.com/nikhilamaragani-jpg)

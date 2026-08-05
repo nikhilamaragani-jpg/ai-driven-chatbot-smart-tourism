@@ -1,6 +1,6 @@
 """
 AI-Driven Chatbot Framework for Smart Tourism
-Prototype with intent detection + SQLite chat history
+Prototype with intent detection + knowledge base + SQLite history
 """
 
 import sys
@@ -10,6 +10,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from chatbot.intent import detect_intent
 from chatbot.response import generate_response
+from chatbot.knowledge import search_knowledge
 from chatbot.database import init_db, save_message, get_recent_messages
 
 
@@ -44,10 +45,15 @@ def main():
         if not user_input:
             continue
 
-        intent = detect_intent(user_input)
-        reply = generate_response(intent)
-        save_message(user_input, intent, reply)
+        knowledge_answer = search_knowledge(user_input)
+        if knowledge_answer:
+            intent = "knowledge_faq"
+            reply = knowledge_answer
+        else:
+            intent = detect_intent(user_input)
+            reply = generate_response(intent)
 
+        save_message(user_input, intent, reply)
         print(f"Bot ({intent}): {reply}\n")
 
 

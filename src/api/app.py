@@ -19,7 +19,11 @@ if str(SRC) not in sys.path:
 
 from chatbot.service import get_chat_service  # noqa: E402
 from config.settings import settings  # noqa: E402
-from src.api.auth import require_api_key  # noqa: E402
+
+try:
+    from .auth import require_api_key
+except ImportError:  # pragma: no cover
+    from src.api.auth import require_api_key  # type: ignore
 
 logging.basicConfig(
     level=getattr(logging, settings.log_level.upper(), logging.INFO),

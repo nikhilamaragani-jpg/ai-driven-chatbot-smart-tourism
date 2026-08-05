@@ -1,6 +1,6 @@
 """
 AI-Driven Chatbot Framework for Smart Tourism
-Basic entry point - Academic Prototype
+Prototype with intent detection + SQLite chat history
 """
 
 import sys
@@ -10,13 +10,17 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from chatbot.intent import detect_intent
 from chatbot.response import generate_response
+from chatbot.database import init_db, save_message, get_recent_messages
 
 
 def main():
-    print("=" * 50)
+    init_db()
+
+    print("=" * 55)
     print("Smart Tourism Chatbot - Prototype")
-    print("=" * 50)
-    print("Type 'exit' to quit.\n")
+    print("Commands: 'history' to view recent chats | 'exit' to quit")
+    print("=" * 55)
+    print()
 
     while True:
         user_input = input("You: ").strip()
@@ -25,12 +29,26 @@ def main():
             print("Bot: Thank you! Have a great trip!")
             break
 
+        if user_input.lower() == "history":
+            rows = get_recent_messages(5)
+            if not rows:
+                print("Bot: No conversation history yet.\n")
+            else:
+                print("\n--- Recent Conversations ---")
+                for user_msg, intent, bot_msg, created_at in reversed(rows):
+                    print(f"[{created_at}] Intent: {intent}")
+                    print(f"  You: {user_msg}")
+                    print(f"  Bot: {bot_msg}\n")
+            continue
+
         if not user_input:
             continue
 
         intent = detect_intent(user_input)
         reply = generate_response(intent)
-        print(f"Bot: {reply}\n")
+        save_message(user_input, intent, reply)
+
+        print(f"Bot ({intent}): {reply}\n")
 
 
 if __name__ == "__main__":

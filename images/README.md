@@ -1,10 +1,16 @@
 # Images
 
-Add recruiter-facing screenshots here:
+Add recruiter-facing screenshots here (optional but recommended):
 
-- `architecture.png` — exported mermaid/architecture diagram  
-- `api_docs.png` — FastAPI `/docs`  
-- `cli_demo.png` — CLI session  
-- `docker_up.png` — `docker compose up` success  
+- Cover page export from the PDF in `docs/reports/`
+- Architecture / UML diagrams from the report
+- CLI or API demo screenshots
 
-Keep files under ~1 MB each.
+Suggested names:
+
+- `report_cover.png`
+- `architecture_from_report.png`
+- `cli_demo.png`
+- `api_docs.png`
+
+Keep each image under ~1 MB when possible.

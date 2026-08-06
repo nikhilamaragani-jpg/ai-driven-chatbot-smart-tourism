@@ -1,55 +1,73 @@
-# Academic Report Summary — Major Project
+# Major project report summary
 
-**Title:** AI-Driven Chatbot Framework for Smart Tourism: A System Architecture and Systematic Review  
-**Student:** A. Nikhil Sai · 22X31A0513  
-**Institution:** Sri Indu Institute of Engineering and Technology (JNTUH)  
-**Guide:** Ms. K. Mounika  
-**Year:** 2025–2026
+**Full title (academic report):**  
+AI-Driven Chatbot Framework for Smart Tourism: A System Architecture and Systematic Review
 
-## Abstract (condensed)
+| Field | Detail |
+|-------|--------|
+| Student | A. Nikhil Sai |
+| Roll No. | **22X31A0513** |
+| Degree | B.Tech — Computer Science and Engineering |
+| Institution | Sri Indu Institute of Engineering and Technology (Autonomous), affiliated to **JNTUH** |
+| Guide | **Ms. K. Mounika**, Assistant Professor |
+| Department | CSE |
+| Academic year | **2025–2026** |
+| Report type | Major project report |
 
-Chatbots are increasingly used across websites, mobile apps, and tourism platforms. This project provides a comprehensive overview of chatbots in tourism: classification criteria, conceptual architecture, comparison of development tools, and analysis of tourism applications over the past decade, including impact on the **6A tourism framework**. It also proposes an AI-driven chatbot framework for smart tourism environments.
+## Report goals (from abstract / objectives)
 
-## Key contributions (report)
+1. Classify chatbots and study conceptual architecture and components.  
+2. Compare chatbot development tools (advantages / disadvantages).  
+3. Examine chatbot integration in tourism over recent research.  
+4. Analyze impact using the tourism **6A framework**:  
+   **Attractions · Accessibility · Amenities · Activities · Available Packages · Ancillary Services**.  
+5. Propose an AI-driven chatbot framework for smart tourism environments.
 
-1. Classification of chatbots based on specific criteria
-2. Conceptual architecture and key components
-3. Comparison of chatbot development tools (advantages/disadvantages)
-4. Integration analysis in tourism (decade of applications)
-5. Mapping chatbot impact to 6A framework dimensions
-6. Proposed framework: preprocessing, NLP engines, knowledge bases, context management, response generation, personalization, analytics, integration
+## Problem (report)
 
-## Objectives (report)
+- Rule-based tourism bots with fixed scripts  
+- Weak multi-turn context and personalization  
+- Limited integration with booking / travel services  
+- Limited multilingual and cultural adaptability  
 
-- Intelligent natural-language tourism assistance
-- Personalized recommendations (budget, interests, history)
-- Context-aware multi-turn conversations
-- Multilingual communication potential
-- Integration with tourism platforms (airlines, hotels, packages)
-- 24/7 automated support + analytics/feedback loops
+## Proposed architecture layers (report design)
 
-## Technologies required (report)
+| Layer | Role |
+|-------|------|
+| User interface | Web / mobile natural-language interaction |
+| Chatbot processing | NLP, intent, entity extraction |
+| AI / ML | Recommendations and smarter responses |
+| Database | Destinations, hotels, packages, interactions |
+| Integration | External tourism / booking services |
+| Response generation | Final answer to the user |
 
-AI, ML, Deep Learning, NLP, DBMS, web technologies (HTML/CSS/JS), API integration
+## Report modules (design)
 
-## Screens documented in report
+User interface · Query processing · Recommendation · Database management · Integration · Response generation
 
-Welcome · Create Account · Login · Chatbot · Dashboard · Profile
+## Report tech vision
 
-## Repository mapping
+AI / ML / Deep Learning / NLP · DBMS (e.g. MySQL in report) · Web stack (HTML/CSS/JS) · API integration · (report sample code includes Django models and optional OpenAI-style generation)
 
-| Report concept | Repo module |
-|----------------|-------------|
-| Query processing / intent | `src/chatbot/intent.py` |
-| Knowledge base | `src/chatbot/knowledge.py` |
-| Response generation | `src/chatbot/response.py` |
-| Analytics / history | `src/chatbot/database.py` |
-| Interface | `src/main.py` (CLI; web in future) |
+## UI screens listed in report
 
-## Full PDF
+Welcome · Create account · Login · Chatbot · Dashboard · Profile
 
-Place the signed major project PDF at:
+## UML (report)
 
-`docs/reports/MAJOR_PROJECT_AI_CHATBOT_SMART_TOURISM.pdf`
+System architecture · Use case · Class · Sequence · Activity diagrams
 
-(Local source on author machine: `OneDrive/Documents/B.TECH PROJECTS/MAJOR PRJ INDIVIDUAL WITH SIGNS.pdf`)
+---
+
+## Honest mapping: report vs this GitHub repository
+
+| Area | Academic report | This repository (runnable demo) |
+|------|-----------------|----------------------------------|
+| Scope | Full major-project research + system design + sample web-oriented code | Focused **modular prototype** you can clone and run |
+| Interface | Web screens (login, dashboard, profile) | **CLI** + **FastAPI** REST (`/chat`, `/history`, `/health`) |
+| NLP / AI | Broad NLP / ML / optional LLM generation | **RAG-style TF-IDF / hashing retrieval** + intent templates; optional LLM hooks documented |
+| Data | Tourism DB models (destinations, hotels, packages, bookings) | Curated **knowledge base** + **SQLite** conversation log |
+| Multilingual | Report objective | Partial roadmap / sample report code; not full production i18n here |
+| Booking APIs | Report integration vision | **Not implemented** (roadmap) |
+
+**Use this file** when explaining the project: the report is the academic depth; the repo is the engineering evidence that runs offline.

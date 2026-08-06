@@ -1,19 +1,20 @@
 <div align="center">
 
-# AI-Driven Chatbot for Smart Tourism
+# AI-Driven Chatbot Framework for Smart Tourism
 
-### B.Tech Major Project · Applied AI · NLP · FastAPI Demo
+### B.Tech Major Project (2025–2026) · Applied AI · NLP · FastAPI Demo
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-REST-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)](Dockerfile)
-[![CI](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)](.github/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**Amaragani Nikhil Sai** · B.Tech CSE · SIIET (JNTUH) · Major project prototype  
-Runnable offline demo with optional API-key auth. Honest scope: local retrieval demo, not commercial traffic.
+**Amaragani Nikhil Sai** · Roll **22X31A0513** · SIIET (JNTUH)  
+**Guide:** Ms. K. Mounika · Full report title: *AI-Driven Chatbot Framework for Smart Tourism: A System Architecture and Systematic Review*
 
-[Problem](#problem) · [Solution](#solution) · [Architecture](#architecture) · [Installation](#installation) · [Usage](#usage)
+Runnable offline prototype. Academic report includes wider research, UML, and web UI vision — see [docs/REPORT_SUMMARY.md](docs/REPORT_SUMMARY.md).
+
+[Problem](#problem) · [Solution](#solution) · [Architecture](#architecture) · [Installation](#installation) · [Docs](#documentation)
 
 </div>
 
@@ -21,22 +22,22 @@ Runnable offline demo with optional API-key auth. Honest scope: local retrieval 
 
 ## Problem
 
-Travel support is information-heavy. Simple keyword bots miss paraphrases; answers are often ungrounded. This major project studies a modular chatbot framework for smart tourism and ships a **runnable prototype** with retrieval, intent routing, logging, and an API surface.
+Tourism is information-intensive. Travelers need help with destinations, stays, transport, and planning. Many bots are **rule-based**, lose multi-turn context, give generic answers, and do not integrate with real tourism services. The major project studies this gap and proposes a smarter framework aligned with the tourism **6A** model (Attractions, Accessibility, Amenities, Activities, Available Packages, Ancillary Services).
 
 ---
 
 ## Solution
 
-A modular Applied AI tourism assistant with:
+**Academic report:** system architecture, literature/tool survey, UML, functional requirements, and sample web-oriented implementation concepts (including multilingual and booking integration vision).
+
+**This repository:** a modular **runnable prototype** you can clone today:
 
 - RAG-style retrieval over a curated tourism knowledge base  
 - Intent routing fallback  
-- FastAPI REST API + CLI  
-- Optional API-key authentication  
+- CLI + FastAPI REST API  
+- Optional API-key auth  
 - SQLite conversation logging  
-- Offline evaluation harness  
-- Docker packaging + CI tests  
-- Documented upgrade path (vector DB / LLM)  
+- Evaluation harness, Docker, CI  
 
 ---
 
@@ -44,13 +45,14 @@ A modular Applied AI tourism assistant with:
 
 | Feature | Status |
 |---------|--------|
-| TF-IDF / hashing vector retrieval | Implemented |
+| Local RAG-style retrieval | Implemented (this repo) |
 | Intent + template fallback | Implemented |
-| REST: health, chat, history | Implemented |
-| Optional `X-API-Key` auth | Implemented |
-| Evaluation script (hit-rate) | Implemented |
-| Docker + GitHub Actions | Implemented |
-| Full LangChain / paid LLM backend | Roadmap (not claimed live) |
+| REST chat / history / health | Implemented |
+| Conversation logging | Implemented |
+| Docker + tests | Implemented |
+| Full web login/dashboard UI from report screens | Report scope / roadmap |
+| Live booking / airline APIs | Report scope / roadmap |
+| Full multilingual production stack | Report objective / partial samples |
 
 ---
 
@@ -58,31 +60,20 @@ A modular Applied AI tourism assistant with:
 
 ![Architecture](images/architecture.svg)
 
-![Workflow](images/workflow.svg)
-
-```text
-Client → FastAPI (+ optional API key)
-            ├─ Retriever (RAG-style)
-            ├─ Intent router
-            └─ Composer / optional LLM
-                    ↓
-            SQLite conversation log
-```
+**Report layers:** User interface → Chatbot processing (NLP) → AI/ML → Database → Integration → Response generation.  
+**Repo implementation:** Client (CLI/HTTP) → FastAPI → Retriever + Intent → Composer → SQLite log.
 
 ---
 
 ## Tech stack
 
-Python · FastAPI · Pydantic · scikit-learn · NumPy · SQLite · Docker · pytest · GitHub Actions
-
----
-
-## Folder structure
-
-```text
-config/  src/api/  src/chatbot/  tests/  docs/  scripts/  images/  data/
-Dockerfile  docker-compose.yml  requirements.txt  .github/workflows/ci.yml
-```
+| | Report vision | This repo |
+|--|---------------|-----------|
+| Language | Python (+ web stack) | Python 3.10+ |
+| API / UI | Web app screens | FastAPI + CLI |
+| NLP / AI | ML / DL / NLP / optional LLM | scikit-learn retrieval + rules |
+| Storage | DBMS (e.g. MySQL models in samples) | SQLite chat history |
+| Packaging | — | Docker, GitHub Actions |
 
 ---
 
@@ -91,97 +82,52 @@ Dockerfile  docker-compose.yml  requirements.txt  .github/workflows/ci.yml
 ```bash
 git clone https://github.com/nikhilamaragani-jpg/ai-driven-chatbot-smart-tourism.git
 cd ai-driven-chatbot-smart-tourism
-python -m venv .venv && source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 cp .env.example .env
+python src/main.py
 ```
+
+API: `uvicorn src.api.app:app --reload` → http://127.0.0.1:8000/docs
 
 ---
 
 ## Usage
 
-```bash
-# CLI
-python src/main.py
-
-# API
-uvicorn src.api.app:app --reload --port 8000
-
-# Evaluate retrieval
-python scripts/evaluate_retrieval.py
-
-# Tests
-pytest -q
-
-# Docker
-docker compose up --build
-```
-
-```bash
-curl -s http://127.0.0.1:8000/health
-curl -s -X POST http://127.0.0.1:8000/chat \
-  -H "Content-Type: application/json" \
-  -d '{"message":"budget planning tips"}'
-```
-
-With auth: set `API_KEY` and pass header `X-API-Key`.
+**CLI:** `places to visit` · `budget planning` · `history` · `exit`  
+**API:** `POST /chat` with `{"message":"..."}`  
+**Eval:** `python scripts/evaluate_retrieval.py`
 
 ---
 
 ## Project workflow
 
-1. Curate tourism FAQ knowledge  
-2. Index for retrieval  
-3. Accept query via CLI/API  
-4. Retrieve → compose (or intent template)  
-5. Log turn → return structured JSON  
-6. Evaluate hit-rate offline  
-
----
-
-## Screenshots
-
-| Asset | Path |
-|-------|------|
-| Architecture | [images/architecture.svg](images/architecture.svg) |
-| Workflow | [images/workflow.svg](images/workflow.svg) |
-| API docs | Run server → `/docs` |
-| Eval sample | [data/outputs/retrieval_eval.sample.json](data/outputs/retrieval_eval.sample.json) |
-
----
-
-## Results
-
-- Offline retrieval eval sample on labeled queries (re-run script for live numbers)  
-- API returns `intent`, `source`, `retrieval_scores` for review and demos  
-
-**Prototype vs full report:** this repo is the runnable core; broader UML/web/LLM vision stays in report/roadmap.
-
----
-
-## Future improvements
-
-- [ ] Optional LLM generation when a key is available  
-- [ ] Chroma/FAISS embeddings backend  
-- [ ] PostgreSQL multi-user history  
-- [ ] Stronger evaluation suite  
-
----
-
-## Skills demonstrated
-
-Applied AI · NLP · RAG-style design · REST APIs · evaluation · Docker · CI · modular Python · technical documentation
+1. Knowledge base (tourism FAQs / 6A-aligned themes)  
+2. Retrieve top snippets  
+3. Compose answer or intent template  
+4. Log turn  
+5. Return structured result for review  
 
 ---
 
 ## Documentation
 
-[PROJECT_BRIEF](docs/PROJECT_BRIEF.md) · [DEMO](docs/DEMO.md) · [INTERVIEW](docs/INTERVIEW.md) · [RESUME_BULLETS](docs/RESUME_BULLETS.md) · [API](docs/API.md) · [ARCHITECTURE](docs/ARCHITECTURE.md) · [EVALUATION](docs/EVALUATION.md)
+| Doc | Purpose |
+|-----|---------|
+| [REPORT_SUMMARY.md](docs/REPORT_SUMMARY.md) | **Report facts** from major project PDF |
+| [PROJECT_BRIEF.md](docs/PROJECT_BRIEF.md) | Short technical brief |
+| [DEMO.md](docs/DEMO.md) | 5-minute demo |
+| [INTERVIEW.md](docs/INTERVIEW.md) | Pitch + Q&A |
+| [RESUME_BULLETS.md](docs/RESUME_BULLETS.md) | Resume lines |
+| [API.md](docs/API.md) · [ARCHITECTURE.md](docs/ARCHITECTURE.md) · [EVALUATION.md](docs/EVALUATION.md) | Engineering notes |
+
+---
+
+## Skills demonstrated
+
+Problem framing · conversational AI · RAG-style design · REST APIs · modular Python · evaluation · documentation · honest academic vs prototype scoping
 
 ---
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
-
-**Author:** Amaragani Nikhil Sai · B.Tech CSE · https://nikhilamaragani-jpg.github.io/ · nikhilamaragani@gmail.com
+MIT · **Author:** Amaragani Nikhil Sai · https://nikhilamaragani-jpg.github.io/

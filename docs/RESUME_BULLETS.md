@@ -1,5 +1,5 @@
 # Resume bullets — Smart Tourism Chatbot
 
-- Built an Applied AI tourism assistant with TF-IDF RAG-style retrieval, intent routing, and SQLite conversation logging.  
-- Exposed a FastAPI REST API (chat, health, history) with Docker packaging, environment-based config, and pytest CI.  
-- Designed modular retrieval/generation layers so embeddings or LLM backends can replace local components without rewriting orchestration.  
+- Major project (B.Tech CSE, 22X31A0513; guide Ms. K. Mounika): *AI-Driven Chatbot Framework for Smart Tourism* — architecture study aligned with the tourism 6A framework.  
+- Implemented a runnable modular prototype with RAG-style knowledge retrieval, intent routing, SQLite conversation logging, and FastAPI endpoints.  
+- Documented clear separation between academic report scope (web UI, booking APIs, broader NLP) and the offline demo shipped on GitHub.  

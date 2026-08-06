@@ -2,16 +2,20 @@
 
 | Field | Detail |
 |-------|--------|
-| Type | Portfolio flagship · Applied AI / NLP service |
-| Author | Amaragani Nikhil Sai |
-| Stack | Python, FastAPI, scikit-learn TF-IDF, SQLite, Docker |
-| Audience | Junior Data / ML / Applied AI hiring |
+| Type | B.Tech **Major Project** (2025–2026) |
+| Author | Amaragani Nikhil Sai (**22X31A0513**) |
+| Institution | SIIET (JNTUH) |
+| Guide | Ms. K. Mounika |
+| Full report title | AI-Driven Chatbot Framework for Smart Tourism: A System Architecture and Systematic Review |
+| Stack (this repo) | Python, FastAPI, scikit-learn (TF-IDF/hashing retrieval), SQLite, Docker |
 
 ## Goal
 
-Ship a runnable tourism assistant that shows **retrieval-grounded answers**, **API design**, and **engineering packaging** suitable for entry-level EU tech interviews.
+Design and demonstrate an AI-oriented tourism chatbot framework aligned with smart-tourism needs (including the **6A** view of tourism services), and ship a **runnable modular prototype** for intent handling, knowledge retrieval, response generation, and conversation logging.
 
-## Honest scope
+## Prototype vs report
 
-- **Implemented:** local RAG-style retrieval, intent fallback, REST API, logging, Docker, tests.  
-- **Not claimed live:** managed vector DB, paid LLM production traffic, multi-tenant SaaS.  
+- **This repo:** CLI + FastAPI, local RAG-style retrieval, intent fallback, SQLite history, tests, Docker.  
+- **Report:** literature/system analysis, UML, web UI vision, broader NLP/API/booking integrations.  
+
+Keep claims aligned with what `python src/main.py` and `uvicorn src.api.app:app` actually run. See [REPORT_SUMMARY.md](REPORT_SUMMARY.md).

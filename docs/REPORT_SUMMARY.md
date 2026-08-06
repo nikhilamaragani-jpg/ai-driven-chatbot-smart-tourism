@@ -71,3 +71,8 @@ System architecture · Use case · Class · Sequence · Activity diagrams
 | Booking APIs | Report integration vision | **Not implemented** (roadmap) |
 
 **Use this file** when explaining the project: the report is the academic depth; the repo is the engineering evidence that runs offline.
+
+## Full PDF
+
+[Download major project report (PDF)](reports/Major_Project_Smart_Tourism_Chatbot_Report.pdf)
+

@@ -20,6 +20,9 @@ Runnable offline prototype. Academic report includes wider research, UML, and we
 
 ---
 
+![Report cover](images/report_cover.svg)
+
+
 ## Problem
 
 Tourism is information-intensive. Travelers need help with destinations, stays, transport, and planning. Many bots are **rule-based**, lose multi-turn context, give generic answers, and do not integrate with real tourism services. The major project studies this gap and proposes a smarter framework aligned with the tourism **6A** model (Attractions, Accessibility, Amenities, Activities, Available Packages, Ancillary Services).
@@ -131,3 +134,8 @@ Problem framing · conversational AI · RAG-style design · REST APIs · modular
 ## License
 
 MIT · **Author:** Amaragani Nikhil Sai · https://nikhilamaragani-jpg.github.io/
+
+### Academic report PDF
+
+- **Major project PDF:** [docs/reports/Major_Project_Smart_Tourism_Chatbot_Report.pdf](docs/reports/Major_Project_Smart_Tourism_Chatbot_Report.pdf)
+

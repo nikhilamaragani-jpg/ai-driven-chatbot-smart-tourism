@@ -1,23 +1,28 @@
-# Interview walkthrough — Smart Tourism Chatbot
+# Project walkthrough — Smart Tourism Chatbot
 
-## 60-second pitch
+## 60-second summary
 
-I built a tourism Applied AI service with a retrieval layer over a curated knowledge base, intent fallbacks, SQLite conversation logging, and a FastAPI interface. Locally it runs without paid APIs using TF-IDF retrieval so demos are reliable. The architecture is designed so retrieval and generation can be upgraded independently.
+Tourism needs structured assistance. My major project ships a modular Python prototype with RAG-style retrieval over a tourism knowledge base, intent fallbacks, SQLite conversation logging, and a FastAPI interface. The local demo runs without paid APIs so it is reliable to show.
 
-## Design questions
+## Architecture
 
-**Why not only an LLM?**  
-Grounding + cost control. Retrieval first reduces hallucination for FAQ-style tourism help.
-
-**Why TF-IDF?**  
-Deterministic, offline, easy to explain metrics. Production path: embeddings + vector DB.
-
-**How would you evaluate?**  
-Precision@k on FAQ labels, human groundedness checklist, latency, and logging of source path (retrieval vs template).
-
-**What breaks first at scale?**  
-SQLite write contention, single-process embedding load, lack of auth/rate limits — all roadmap items.
+1. User message (CLI or API)  
+2. Knowledge retrieval (TF-IDF / hashing vectors)  
+3. Intent fallback if retrieval is weak  
+4. Save turn to SQLite  
 
 ## Demo
 
-CLI + `POST /chat` + show `retrieval_scores` in JSON.
+```bash
+pip install -r requirements.txt
+python src/main.py
+# or: uvicorn src.api.app:app --reload
+```
+
+Try: `places to visit` · `budget planning` · `history` · `exit`
+
+## Questions
+
+**Why modular design?** Clear layers make stronger NLP or embeddings easier to add later.  
+**Why local retrieval first?** Deterministic demos, no API cost, grounded FAQ answers.  
+**Prototype vs report?** Repo = focused runnable core; report covers broader research and future integrations.

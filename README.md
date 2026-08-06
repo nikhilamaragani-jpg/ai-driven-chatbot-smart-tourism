@@ -1,8 +1,8 @@
 <div align="center">
 
-# Smart Tourism Chatbot
+# AI-Driven Chatbot for Smart Tourism
 
-### Production-style Applied AI Service · RAG · FastAPI · Docker
+### B.Tech Major Project · Applied AI · NLP · FastAPI Demo
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-REST-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
@@ -10,8 +10,8 @@
 [![CI](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)](.github/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**Amaragani Nikhil Sai** · Portfolio flagship for Junior Applied AI / ML / Backend roles  
-Runnable offline demo. Optional API-key auth. GenAI upgrades documented — not claimed as paid production traffic.
+**Amaragani Nikhil Sai** · B.Tech CSE · SIIET (JNTUH) · Major project prototype  
+Runnable offline demo with optional API-key auth. Honest scope: local retrieval demo, not commercial traffic.
 
 [Problem](#problem) · [Solution](#solution) · [Architecture](#architecture) · [Installation](#installation) · [Usage](#usage)
 
@@ -21,13 +21,13 @@ Runnable offline demo. Optional API-key auth. GenAI upgrades documented — not 
 
 ## Problem
 
-Travel support systems need grounded answers (visas, transport, budgets, attractions). Pure keyword bots fail on paraphrases; LLM-only bots risk ungrounded replies and high cost without retrieval.
+Travel support is information-heavy. Simple keyword bots miss paraphrases; answers are often ungrounded. This major project studies a modular chatbot framework for smart tourism and ships a **runnable prototype** with retrieval, intent routing, logging, and an API surface.
 
 ---
 
 ## Solution
 
-A **production-style Applied AI service** with:
+A modular Applied AI tourism assistant with:
 
 - RAG-style retrieval over a curated tourism knowledge base  
 - Intent routing fallback  
@@ -36,7 +36,7 @@ A **production-style Applied AI service** with:
 - SQLite conversation logging  
 - Offline evaluation harness  
 - Docker packaging + CI tests  
-- Documented LangChain / vector DB / LLM upgrade path  
+- Documented upgrade path (vector DB / LLM)  
 
 ---
 
@@ -50,7 +50,7 @@ A **production-style Applied AI service** with:
 | Optional `X-API-Key` auth | Implemented |
 | Evaluation script (hit-rate) | Implemented |
 | Docker + GitHub Actions | Implemented |
-| LangChain / Chroma / OpenAI | Scaffold + TODO (honest) |
+| Full LangChain / paid LLM backend | Roadmap (not claimed live) |
 
 ---
 
@@ -73,8 +73,7 @@ Client → FastAPI (+ optional API key)
 
 ## Tech stack
 
-Python · FastAPI · Pydantic · scikit-learn · NumPy · SQLite · Docker · pytest · GitHub Actions  
-Keywords: NLP, RAG, GenAI design, REST API, Applied AI, logging, configuration
+Python · FastAPI · Pydantic · scikit-learn · NumPy · SQLite · Docker · pytest · GitHub Actions
 
 ---
 
@@ -134,7 +133,7 @@ With auth: set `API_KEY` and pass header `X-API-Key`.
 1. Curate tourism FAQ knowledge  
 2. Index for retrieval  
 3. Accept query via CLI/API  
-4. Retrieve → compose (or intent template / optional LLM)  
+4. Retrieve → compose (or intent template)  
 5. Log turn → return structured JSON  
 6. Evaluate hit-rate offline  
 
@@ -146,38 +145,38 @@ With auth: set `API_KEY` and pass header `X-API-Key`.
 |-------|------|
 | Architecture | [images/architecture.svg](images/architecture.svg) |
 | Workflow | [images/workflow.svg](images/workflow.svg) |
-| API docs | Run server → `/docs` (capture to `images/api_docs.png`) |
+| API docs | Run server → `/docs` |
 | Eval sample | [data/outputs/retrieval_eval.sample.json](data/outputs/retrieval_eval.sample.json) |
 
 ---
 
 ## Results
 
-- Offline retrieval eval sample: hit-rate **1.0** on 6 labeled queries (re-run script for live numbers)  
-- API returns `intent`, `source`, `retrieval_scores` for debugging and interviews  
+- Offline retrieval eval sample on labeled queries (re-run script for live numbers)  
+- API returns `intent`, `source`, `retrieval_scores` for review and demos  
+
+**Prototype vs full report:** this repo is the runnable core; broader UML/web/LLM vision stays in report/roadmap.
 
 ---
 
 ## Future improvements
 
-- [ ] Wire OpenAI / local LLM generation when key present  
+- [ ] Optional LLM generation when a key is available  
 - [ ] Chroma/FAISS embeddings backend  
-- [ ] Full LangChain retrieval chain  
 - [ ] PostgreSQL multi-user history  
-- [ ] Cloud deploy (Render/Azure) with secrets  
-- [ ] Agent tools (weather/maps) with strict grounding  
+- [ ] Stronger evaluation suite  
 
 ---
 
 ## Skills demonstrated
 
-Applied AI · NLP · RAG design · REST APIs · authentication basics · evaluation · Docker · CI · modular Python · documentation for hiring reviews
+Applied AI · NLP · RAG-style design · REST APIs · evaluation · Docker · CI · modular Python · technical documentation
 
 ---
 
 ## Documentation
 
-[PROJECT_BRIEF](docs/PROJECT_BRIEF.md) · [DEMO](docs/DEMO.md) · [API](docs/API.md) · [ARCHITECTURE](docs/ARCHITECTURE.md) · [EVALUATION](docs/EVALUATION.md) · [DEPLOYMENT](docs/DEPLOYMENT.md) · [GENAI_ROADMAP](docs/GENAI_ROADMAP.md) · [INTERVIEW](docs/INTERVIEW.md) · [RESUME_BULLETS](docs/RESUME_BULLETS.md)
+[PROJECT_BRIEF](docs/PROJECT_BRIEF.md) · [DEMO](docs/DEMO.md) · [INTERVIEW](docs/INTERVIEW.md) · [RESUME_BULLETS](docs/RESUME_BULLETS.md) · [API](docs/API.md) · [ARCHITECTURE](docs/ARCHITECTURE.md) · [EVALUATION](docs/EVALUATION.md)
 
 ---
 
@@ -185,4 +184,4 @@ Applied AI · NLP · RAG design · REST APIs · authentication basics · evaluat
 
 MIT — see [LICENSE](LICENSE).
 
-**Author:** Amaragani Nikhil Sai · https://nikhilamaragani-jpg.github.io/ · nikhilamaragani@gmail.com
+**Author:** Amaragani Nikhil Sai · B.Tech CSE · https://nikhilamaragani-jpg.github.io/ · nikhilamaragani@gmail.com

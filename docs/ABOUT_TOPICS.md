@@ -1,10 +1,10 @@
-# GitHub About (set manually in repo sidebar)
+# GitHub About (set in repo sidebar)
 
 **Description:**
-Production-style Applied AI tourism assistant | FastAPI · RAG · NLP · Docker · evaluation
+B.Tech Major Project: Smart Tourism Chatbot | NLP · RAG-style retrieval · FastAPI · Docker
 
 **Homepage:**
 https://nikhilamaragani-jpg.github.io/
 
 **Topics:**
-python, fastapi, nlp, rag, genai, applied-ai, conversational-ai, docker, rest-api, machine-learning, scikit-learn, etl
+python, fastapi, nlp, chatbot, rag, applied-ai, machine-learning, docker, scikit-learn, btech-project

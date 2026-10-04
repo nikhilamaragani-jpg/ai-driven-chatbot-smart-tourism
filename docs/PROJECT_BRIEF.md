@@ -15,7 +15,7 @@ Design and demonstrate an AI-oriented tourism chatbot framework aligned with sma
 
 ## Prototype vs report
 
-- **This repo:** CLI + FastAPI, local RAG-style retrieval, intent fallback, SQLite history, tests, Docker.  
+- **This repo:** CLI + FastAPI, local RAG-style retrieval, intent fallback, SQLite chat history and feedback, aggregate usage analytics/CSV export, tests, Docker.
 - **Report:** literature/system analysis, UML, web UI vision, broader NLP/API/booking integrations.  
 
 Keep claims aligned with what `python src/main.py` and `uvicorn src.api.app:app` actually run. See [REPORT_SUMMARY.md](REPORT_SUMMARY.md).

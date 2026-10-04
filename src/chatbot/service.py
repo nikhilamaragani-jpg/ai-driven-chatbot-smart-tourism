@@ -6,7 +6,13 @@ import logging
 from dataclasses import asdict, dataclass
 from typing import Any, Dict, List, Optional
 
-from .database import get_recent_messages, init_db, save_message
+from .database import (
+    get_analytics,
+    get_recent_messages,
+    init_db,
+    save_feedback,
+    save_message,
+)
 from .intent import detect_intent
 from .llm import generate_with_llm
 from .response import generate_response
@@ -21,6 +27,7 @@ class ChatResult:
     intent: str
     source: str  # retrieval | intent_template | llm
     retrieval_scores: List[Dict[str, Any]]
+    conversation_id: Optional[int] = None
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
@@ -40,6 +47,7 @@ class ChatService:
                 intent="empty",
                 source="intent_template",
                 retrieval_scores=[],
+                conversation_id=None,
             )
 
         answer, chunks = self.retriever.best_answer(message)
@@ -55,8 +63,9 @@ class ChatService:
         else:
             reply, source = generate_response(intent), "intent_template"
 
+        conversation_id = None
         if persist:
-            save_message(message, f"{intent}|{source}", reply)
+            conversation_id = save_message(message, f"{intent}|{source}", reply)
             logger.info("chat_turn intent=%s source=%s", intent, source)
 
         return ChatResult(
@@ -64,10 +73,17 @@ class ChatService:
             intent=intent,
             source=source,
             retrieval_scores=scores,
+            conversation_id=conversation_id,
         )
 
     def history(self, limit: int = 5) -> List[tuple]:
         return get_recent_messages(limit)
+
+    def analytics(self, days: int = 30) -> Dict[str, Any]:
+        return get_analytics(days)
+
+    def feedback(self, conversation_id: int, rating: str) -> bool:
+        return save_feedback(conversation_id, rating)
 
 
 _service: Optional[ChatService] = None

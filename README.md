@@ -40,6 +40,7 @@ Tourism is information-intensive. Travelers need help with destinations, stays, 
 - CLI + FastAPI REST API  
 - Optional API-key auth  
 - SQLite conversation logging  
+- Traveler feedback and privacy-safe usage analytics with CSV export
 - Evaluation harness, Docker, CI  
 
 ---
@@ -50,8 +51,9 @@ Tourism is information-intensive. Travelers need help with destinations, stays, 
 |---------|--------|
 | Local RAG-style retrieval | Implemented (this repo) |
 | Intent + template fallback | Implemented |
-| REST chat / history / health | Implemented |
+| REST chat / feedback / history / health | Implemented |
 | Conversation logging | Implemented |
+| Aggregate usage analytics + CSV export | Implemented |
 | Docker + tests | Implemented |
 | Full web login/dashboard UI from report screens | Report scope / roadmap |
 | Live booking / airline APIs | Report scope / roadmap |
@@ -97,7 +99,8 @@ API: `uvicorn src.api.app:app --reload` → http://127.0.0.1:8000/docs
 ## Usage
 
 **CLI:** `places to visit` · `budget planning` · `history` · `exit`  
-**API:** `POST /chat` with `{"message":"..."}`  
+**API:** `POST /chat` with `{"message":"..."}` · `POST /feedback` with a conversation ID and rating<br>
+**Analyst metrics:** `GET /analytics?days=30` · `GET /analytics/export.csv?days=30`
 **Eval:** `python scripts/evaluate_retrieval.py`
 
 ---
@@ -138,4 +141,3 @@ MIT · **Author:** Amaragani Nikhil Sai · https://nikhilamaragani-jpg.github.io
 ### Academic report PDF
 
 - **Major project PDF:** [docs/reports/Major_Project_Smart_Tourism_Chatbot_Report.pdf](docs/reports/Major_Project_Smart_Tourism_Chatbot_Report.pdf)
-

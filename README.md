@@ -141,3 +141,9 @@ MIT · **Author:** Amaragani Nikhil Sai · https://nikhilamaragani-jpg.github.io
 ### Academic report PDF
 
 - **Major project PDF:** [docs/reports/Major_Project_Smart_Tourism_Chatbot_Report.pdf](docs/reports/Major_Project_Smart_Tourism_Chatbot_Report.pdf)
+
+## Portfolio positioning
+
+This is an academic major project retained as supporting technical evidence. The repository contains a runnable offline prototype; report-level future architecture, live integrations, and production capabilities are not claimed as implemented.
+
+For the current Data Analyst portfolio, see: https://nikhilamaragani-jpg.github.io/
